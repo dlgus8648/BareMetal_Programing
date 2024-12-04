@@ -76,7 +76,7 @@ void spi1_config(void){
 	SPI1->CR1 |= (1<<6);
 
 }
-
+//------------------------------------------------------------//
 void spi1_transmit(uint8_t *data,uint32_t size){
 	
 	uint32_t i=0;
@@ -95,7 +95,7 @@ void spi1_transmit(uint8_t *data,uint32_t size){
 	temp = SPI1->DR;
 	temp = SPI1->SR;
 }
-
+//------------------------------------------------------------//
 void spi1_receive(uint8_t *data,uint32_t size){
 	while(size)	{
 		SPI1->DR =0;
@@ -106,12 +106,12 @@ void spi1_receive(uint8_t *data,uint32_t size){
 	}
 }
 
-
+//------------------------------------------------------------//
 void cs_enable(void)
 {	GPIOA->ODR &=~(1U<<9);
 
 }
-
+//------------------------------------------------------------//
 void cs_disable(void){
 	GPIOA->ODR |=(1U<<9);
 }
